@@ -6,7 +6,7 @@
 /*   By: penpalac <penpalac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/20 19:03:07 by penpalac          #+#    #+#             */
-/*   Updated: 2025/10/20 19:09:08 by penpalac         ###   ########.fr       */
+/*   Updated: 2025/10/23 16:50:07 by penpalac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ int main(void)
 	uintptr_t uint = 1;
 
 	d->str = "blah";
+	d->i = 42;
+	d->f = 4.2f;
 	std::cout << "Data before: " << d << std::endl;
 	std::cout << "Uint before: " << uint << std::endl;
 	uint = Serializer::serialize(d);

@@ -6,7 +6,7 @@
 /*   By: penpalac <penpalac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/20 18:26:22 by penpalac          #+#    #+#             */
-/*   Updated: 2025/10/20 19:01:24 by penpalac         ###   ########.fr       */
+/*   Updated: 2025/10/23 16:49:43 by penpalac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@
 typedef struct s_Data
 {
 	std::string str;
+	int i;
+	float f;
 
 } Data;
 
