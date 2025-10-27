@@ -6,7 +6,7 @@
 /*   By: penpalac <penpalac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/21 13:19:46 by penpalac          #+#    #+#             */
-/*   Updated: 2025/10/21 14:44:37 by penpalac         ###   ########.fr       */
+/*   Updated: 2025/10/27 15:25:36 by penpalac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ void identify(Base &p)
 	}
 	catch(const std::exception& e)
 	{
-		std::cerr << e.what() << '\n';
+		std::cerr << e.what() << std::endl;
 		try
 		{
 			(void)dynamic_cast<B&>(p);
@@ -61,7 +61,7 @@ void identify(Base &p)
 		}
 		catch(const std::exception& e)
 		{
-			std::cerr << e.what() << '\n';
+			std::cerr << e.what() << std::endl;
 			try
 			{
 				(void)dynamic_cast<C&>(p);
@@ -70,7 +70,7 @@ void identify(Base &p)
 			}
 			catch(const std::exception& e)
 			{
-				std::cerr << e.what() << '\n';
+				std::cerr << e.what() << std::endl;
 			}
 		}
 	}

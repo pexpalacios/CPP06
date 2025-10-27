@@ -6,15 +6,14 @@
 /*   By: penpalac <penpalac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/20 16:21:30 by penpalac          #+#    #+#             */
-/*   Updated: 2025/10/21 15:20:10 by penpalac         ###   ########.fr       */
+/*   Updated: 2025/10/27 15:18:15 by penpalac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScalarConverter.hpp"
 
 ScalarConverter::ScalarConverter()
-{
-}
+{}
 
 ScalarConverter::ScalarConverter(const ScalarConverter &copy)
 {
@@ -29,8 +28,7 @@ ScalarConverter &ScalarConverter::operator=(const ScalarConverter &copy)
 }
 
 ScalarConverter::~ScalarConverter()
-{
-}
+{}
 
 /////
 
@@ -56,7 +54,6 @@ bool is_int(const std::string &literal)
 		if (!std::isdigit(literal[i]))
 			return (false);
 	}
-	// cehck for int overflow
 	return (true);
 }
 
@@ -214,7 +211,6 @@ void convert_from_psuedo_literal(const std::string &literal)
 
 void ScalarConverter::convert(const std::string &literal)
 {
-	// detect type
 	if (!is_psuedo_literal(literal))
 	{
 		if (is_char(literal))
