@@ -6,7 +6,7 @@
 /*   By: penpalac <penpalac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/20 19:03:07 by penpalac          #+#    #+#             */
-/*   Updated: 2025/10/23 16:50:07 by penpalac         ###   ########.fr       */
+/*   Updated: 2025/10/28 16:48:42 by penpalac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int main(void)
 	Data *d = new Data;
 	uintptr_t uint = 1;
 
-	d->str = "blah";
+	d->str = "str";
 	d->i = 42;
 	d->f = 4.2f;
 	std::cout << "Data before: " << d << std::endl;
@@ -26,6 +26,9 @@ int main(void)
 	std::cout << "Uint after serializer: " << uint << std::endl;
 	d = Serializer::deserialize(uint);
 	std::cout << "Data after deserializer: " << d << std::endl;
+	std::cout << " -str: " << d->str << std::endl;
+	std::cout << " -i: " << d->i << std::endl;
+	std::cout << " -f: " << d->f << std::endl;
 	
 	return (0);	
 }

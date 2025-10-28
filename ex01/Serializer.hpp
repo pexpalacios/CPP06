@@ -6,7 +6,7 @@
 /*   By: penpalac <penpalac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/20 18:26:22 by penpalac          #+#    #+#             */
-/*   Updated: 2025/10/23 16:49:43 by penpalac         ###   ########.fr       */
+/*   Updated: 2025/10/28 16:46:39 by penpalac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #define SERIALIZER_HPP
 
 #include <iostream>
+#include <stdint.h>
 
 typedef struct s_Data
 {

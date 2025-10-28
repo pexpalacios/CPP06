@@ -6,7 +6,7 @@
 /*   By: penpalac <penpalac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/20 16:21:30 by penpalac          #+#    #+#             */
-/*   Updated: 2025/10/27 15:18:15 by penpalac         ###   ########.fr       */
+/*   Updated: 2025/10/28 17:02:20 by penpalac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -115,7 +115,16 @@ void convert_from_char(const std::string &literal)
 
 void convert_from_int(const std::string &literal)
 {
-	long long ll = std::stoll(literal);
+	std::stringstream str(literal);
+	long long ll;
+	str >> ll;
+	
+	if (str.fail())
+	{
+		std::cerr << "Error: invalid int literal" << std::endl;
+		return;
+	}
+	
 	if (ll > INT_MAX || ll < INT_MIN)
 	{
 		std::cout << "char: impossible" << std::endl;
@@ -125,7 +134,7 @@ void convert_from_int(const std::string &literal)
 		return;
 	}
 
-	int i = std::stoi(literal);
+	int i = static_cast<int>(ll);
 
 	if (i < 0 || i > 127)
 		std::cout << "char: impossible" << std::endl;
@@ -140,46 +149,48 @@ void convert_from_int(const std::string &literal)
 
 void convert_from_float(const std::string &literal)
 {
-	try
-	{
-		float f = std::stof(literal);
+	std::stringstream str(literal);
+	float f;
+	str >> f;
 
-		if (f < 0 || f > 127)
-			std::cout << "char: impossible" << std::endl;
-		else if (!std::isprint(static_cast<int>(f)))
-			std::cout << "char: Non displayable" << std::endl;
-		else
-			std::cout << "char: '" << static_cast<char>(f) << "'" << std::endl;
-		std::cout << "int: " << static_cast<int>(f) << std::endl;
-		std::cout << "float: " << f << "f" << std::endl;
-		std::cout << "double: " << static_cast<double>(f) << std::endl;
-	}
-	catch (const std::exception &e)
+	if (str.fail())
 	{
-		std::cerr << e.what() << '\n';
+		std::cerr << "Error: invalid float literal" << std::endl;
+		return;
 	}
+
+	if (f < 0 || f > 127)
+		std::cout << "char: impossible" << std::endl;
+	else if (!std::isprint(static_cast<int>(f)))
+		std::cout << "char: Non displayable" << std::endl;
+	else
+		std::cout << "char: '" << static_cast<char>(f) << "'" << std::endl;
+	std::cout << "int: " << static_cast<int>(f) << std::endl;
+	std::cout << "float: " << f << "f" << std::endl;
+	std::cout << "double: " << static_cast<double>(f) << std::endl;
 }
 
 void convert_from_double(const std::string &literal)
 {
-	try
-	{
-		double d = std::stod(literal);
+	std::stringstream str(literal);
+	double d;
+	str >> d;
 
-		if (d < 0 || d > 127)
-			std::cout << "char: impossible" << std::endl;
-		else if (!std::isprint(static_cast<int>(d)))
-			std::cout << "char: Non displayable" << std::endl;
-		else
-			std::cout << "char: '" << static_cast<char>(d) << "'" << std::endl;
-		std::cout << "int: " << static_cast<int>(d) << std::endl;
-		std::cout << "float: " << static_cast<float>(d) << "f" << std::endl;
-		std::cout << "double: " << d << std::endl;
-	}
-	catch (const std::exception &e)
+	if (str.fail())
 	{
-		std::cerr << e.what() << '\n';
+		std::cerr << "Error: invalid double literal" << std::endl;
+		return;
 	}
+
+	if (d < 0 || d > 127)
+		std::cout << "char: impossible" << std::endl;
+	else if (!std::isprint(static_cast<int>(d)))
+		std::cout << "char: Non displayable" << std::endl;
+	else
+		std::cout << "char: '" << static_cast<char>(d) << "'" << std::endl;
+	std::cout << "int: " << static_cast<int>(d) << std::endl;
+	std::cout << "float: " << static_cast<float>(d) << "f" << std::endl;
+	std::cout << "double: " << d << std::endl;
 }
 
 void convert_from_psuedo_literal(const std::string &literal)

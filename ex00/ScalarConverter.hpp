@@ -6,7 +6,7 @@
 /*   By: penpalac <penpalac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/20 16:18:28 by penpalac          #+#    #+#             */
-/*   Updated: 2025/10/20 16:22:17 by penpalac         ###   ########.fr       */
+/*   Updated: 2025/10/28 16:36:45 by penpalac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #define SCALARCONVERTER_HPP
 
 #include <iostream>
+#include <sstream>
 #include <climits>
 #include <cfloat>
 #include <cmath>

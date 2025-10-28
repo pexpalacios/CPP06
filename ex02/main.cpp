@@ -6,14 +6,12 @@
 /*   By: penpalac <penpalac@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/21 13:19:46 by penpalac          #+#    #+#             */
-/*   Updated: 2025/10/27 15:25:36 by penpalac         ###   ########.fr       */
+/*   Updated: 2025/10/28 16:52:16 by penpalac         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Base.hpp"
-#include "A.hpp"
-#include "B.hpp"
-#include "C.hpp"
+#include "Classes.hpp"
 #include <ctime>
 #include <fstream>
 #include <exception>
